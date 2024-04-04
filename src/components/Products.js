@@ -10,7 +10,12 @@ function Product()
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
         .then(res=>res.json())
-        .then(json=>console.log(json))
+        .then(data => {
+            setProducts(data); 
+        })
+        .catch(error => {
+            console.error('Error fetching products:', error);
+        });
     }, []);
 
     // return a list of product's title and descriptions. Make add to cart button

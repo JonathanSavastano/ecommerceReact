@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <h1>Welcome to my e-commerce website</h1>
       <Product />
-      <ProductCard />
     </div>
   );
 }
