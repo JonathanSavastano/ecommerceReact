@@ -13,6 +13,7 @@ function Product()
         .then(json=>console.log(json))
     }, []);
 
+    // return a list of product's title and descriptions. Make add to cart button
     return (
         <div className='product-page'>
             {products.map(product => (
