@@ -21,6 +21,7 @@ function Product({ addToCart })
     // return a list of product's title and descriptions. Make add to cart button
     return (
         <div className='product-page'>
+            <h3>Products</h3>
             {products.map(product => (
                 <div key={product.id} className="product">
                     <h4>{product.title}</h4>
