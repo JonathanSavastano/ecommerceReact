@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 
 // define product component
-function Product() 
+function Product({ addToCart }) 
 {
     const [products, setProducts] = useState([]);
 
@@ -26,7 +26,7 @@ function Product()
                     <h4>{product.title}</h4>
                     <img className="product-image" src={product.image} alt={product.description} />
                     <p>{product.description}</p>
-                    <button>Add to cart</button>
+                    <button onClick={() => addToCart(product)}>Add to cart</button>
                 </div>
             ))}
         </div>
