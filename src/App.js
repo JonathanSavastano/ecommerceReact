@@ -5,6 +5,8 @@ import './App.css';
 import Product from './components/Products';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
 function App() {
 
@@ -26,7 +28,9 @@ function App() {
       <h1>Welcome to my e-commerce website</h1>
       
       <nav>
-        <Link to="/Cart">Go to Cart</Link>
+        <Link to="/Cart">
+          <FontAwesomeIcon icon={faShoppingCart} size="2x" />
+        </Link>
       </nav>
 
       <Routes>
