@@ -1,10 +1,10 @@
 // import necessary libraries
 import {useState} from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Product from './components/Products';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
-import { BrowserRouter as Router, RouterProvider, Switch, Link } from 'react-router-dom';
 
 function App() {
 
@@ -19,15 +19,16 @@ function App() {
     <Router>
       <div className="App">
       <h1>Welcome to my e-commerce website</h1>
-      <Link to="/cart">Go to Cart</Link>
-      <Switch>
-        <Route exact path="/">
-          <Product addToCart={addToCart} />
-        </Route>
-        <Route path="/cart">
-          <Cart cartItems={cartItems} />
-        </Route>
-      </Switch>
+      
+      <nav>
+        <Link to="/Cart">Go to Cart</Link>
+      </nav>
+
+      <Routes>
+        <Route path='/cart' element={<Cart cartItems={cartItems} />} />
+        <Route path="/" element={<Product addToCart={addToCart} />} />
+      </Routes>
+
     </div>
     </Router>
   );
