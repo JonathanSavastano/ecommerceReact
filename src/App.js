@@ -15,6 +15,11 @@ function App() {
     setCartItems(prevItems => [...prevItems, product]);
   }
 
+  function clearCart() 
+  {
+    setCartItems([]); 
+  }
+
   return (
     <Router>
       <div className="App">
@@ -25,7 +30,8 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path='/cart' element={<Cart cartItems={cartItems} />} />
+        <Route path='/cart' element={<Cart cartItems={cartItems} 
+          clearCart={clearCart}/>} />
         <Route path="/" element={<Product addToCart={addToCart} />} />
       </Routes>
 

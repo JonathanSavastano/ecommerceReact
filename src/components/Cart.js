@@ -1,7 +1,7 @@
-
+import React from 'react';
 
 // define cart component
-function Cart({cartItems}) 
+function Cart({ cartItems, clearCart }) 
 {
     // render the cart component, displaying a list of items in the cart
     return (
@@ -13,6 +13,7 @@ function Cart({cartItems})
                     <p>{item.price}</p>
                 </div>
             ))}
+            <button onClick={clearCart}>Clear Cart</button>
         </div>
     );
 }
