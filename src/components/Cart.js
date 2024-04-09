@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // define cart component
 function Cart({ cartItems, clearCart }) 
@@ -14,6 +17,14 @@ function Cart({ cartItems, clearCart })
                 </div>
             ))}
             <button onClick={clearCart}>Clear Cart</button>
+            <br />
+            <br />
+            {/* link back to app.js */}
+            <nav>
+                        <Link to="/">
+                            <FontAwesomeIcon icon={faHome} size="2x" />
+                        </Link>
+                    </nav>
         </div>
     );
 }
