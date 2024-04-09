@@ -19,12 +19,22 @@ function Cart({ cartItems, clearCart })
             <button onClick={clearCart}>Clear Cart</button>
             <br />
             <br />
+
+            {/* link to checkout */}
+            <nav>
+                <Link to="/Checkout">
+                    Checkout
+                </Link>
+            </nav>
+            <br />
+            <br />
+
             {/* link back to app.js */}
             <nav>
-                        <Link to="/">
-                            <FontAwesomeIcon icon={faHome} size="2x" />
-                        </Link>
-                    </nav>
+                <Link to="/">
+                    <FontAwesomeIcon icon={faHome} size="2x" />
+                </Link>
+            </nav>
         </div>
     );
 }
