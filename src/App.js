@@ -36,6 +36,7 @@ function App() {
       <Routes>
         <Route path='/cart' element={<Cart cartItems={cartItems} 
           clearCart={clearCart}/>} />
+        <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
         <Route path="/" element={<Product addToCart={addToCart} />} />
       </Routes>
 
