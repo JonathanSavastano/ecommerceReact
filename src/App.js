@@ -52,13 +52,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <div className='navbar'>
-        <div className='dropdown' onClick={toggleDropdown}>
-          <span>Navigation &#9662;</span>
-          {showDropdown && cartDropdown}
+        <div className='navbar'>
+          <div className='dropdown' onClick={toggleDropdown}>
+            <span>Navigation &#9662;</span>
+            {showDropdown && cartDropdown}
+          </div>
+          <h1>Welcome to my e-commerce website</h1>
         </div>
-        <h1>Welcome to my e-commerce website</h1>
-      </div>
 
         <Routes>
           <Route path='/cart' element={<Cart cartItems={cartItems} 
