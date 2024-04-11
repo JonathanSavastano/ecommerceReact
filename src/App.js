@@ -11,6 +11,32 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
 
+  // dropdown menu
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // toggle dropdown
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  // close dropdown
+  const closeDropdown = () => {
+    setShowDropdown(false);
+  };
+
+  // dropdown
+  const cartDropdown = (
+    <div className='dropdown-content'>
+      <Link to="/Cart" onClick={closeDropdown}>
+        <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
+      </Link>
+      &nbsp;&nbsp; 
+      <Link to="/" onClick={closeDropdown}>
+        <FontAwesomeIcon icon={faHome} size="2x"/>
+      </Link>
+    </div>
+  );
+
   const[cartItems, setCartItems] = useState([]);
 
   function addToCart(product)
@@ -26,16 +52,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <h1>Welcome to my e-commerce website</h1>
-
-        <nav className='navbar'>
-          <Link to="/">
-            <FontAwesomeIcon icon={faHome} size="2x" />
-          </Link>
-          <Link to="/Cart">
-            <FontAwesomeIcon icon={faShoppingCart} size="2x" />
-          </Link>
-        </nav>
+      <div className='navbar'>
+        <div className='dropdown' onClick={toggleDropdown}>
+          <span>Navigation &#9662;</span>
+          {showDropdown && cartDropdown}
+        </div>
+        <h1>Welcome to my e-commerce website</h1>
+      </div>
 
         <Routes>
           <Route path='/cart' element={<Cart cartItems={cartItems} 
