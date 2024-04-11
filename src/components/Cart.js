@@ -13,6 +13,7 @@ function Cart({ cartItems, clearCart })
             {cartItems.map(item => (
                 <div key={item.id} className="cart-item">
                     <h4>{item.title}</h4>
+                    <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px' }} />
                     <p>${item.price}</p>
                 </div>
             ))}
