@@ -7,6 +7,7 @@ import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
 
@@ -26,21 +27,24 @@ function App() {
     <Router>
       <div className="App">
       <h1>Welcome to my e-commerce website</h1>
-      
-      <nav>
-        <Link to="/Cart">
-          <FontAwesomeIcon icon={faShoppingCart} size="2x" />
-        </Link>
-      </nav>
 
-      <Routes>
-        <Route path='/cart' element={<Cart cartItems={cartItems} 
-          clearCart={clearCart}/>} />
-        <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
-        <Route path="/" element={<Product addToCart={addToCart} />} />
-      </Routes>
+        <nav className='navbar'>
+          <Link to="/">
+            <FontAwesomeIcon icon={faHome} size="2x" />
+          </Link>
+          <Link to="/Cart">
+            <FontAwesomeIcon icon={faShoppingCart} size="2x" />
+          </Link>
+        </nav>
 
-    </div>
+        <Routes>
+          <Route path='/cart' element={<Cart cartItems={cartItems} 
+            clearCart={clearCart}/>} />
+          <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
+          <Route path="/" element={<Product addToCart={addToCart} />} />
+        </Routes>
+
+      </div>
     </Router>
   );
 }

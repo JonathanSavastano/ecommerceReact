@@ -41,13 +41,6 @@ function Cart({ cartItems, clearCart })
             </nav>
             <br />
             <br />
-
-            {/* link back to app.js */}
-            <nav>
-                <Link to="/">
-                    <FontAwesomeIcon icon={faHome} size="2x" />
-                </Link>
-            </nav>
         </div>
     );
 }
